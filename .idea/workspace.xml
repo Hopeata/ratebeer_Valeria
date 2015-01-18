@@ -100,7 +100,7 @@
       <file leaf-file-name="breweries_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/breweries_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="2" selection-start="208" selection-end="208" vertical-scroll-proportion="0.19323671" vertical-offset="0" max-vertical-offset="1230">
+            <state line="29" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.7004831" vertical-offset="0" max-vertical-offset="1230">
               <folding />
             </state>
           </provider>
@@ -504,7 +504,11 @@
       <created>1421591151408</created>
       <updated>1421591151408</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="viikko 1&#10;">
+      <created>1421596296081</created>
+      <updated>1421596296081</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -546,7 +550,8 @@
     </option>
     <MESSAGE value="initial commit" />
     <MESSAGE value="viikko 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="viikko 1" />
+    <MESSAGE value="viikko 1&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="viikko 1&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -673,7 +678,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/breweries_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="2" selection-start="208" selection-end="208" vertical-scroll-proportion="0.19323671" vertical-offset="0" max-vertical-offset="1230">
+        <state line="29" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.7004831" vertical-offset="0" max-vertical-offset="1230">
           <folding />
         </state>
       </provider>
