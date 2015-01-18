@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ccc8814-0f3d-4068-906c-1adc4f70b300" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ratebeer.iml" afterPath="$PROJECT_DIR$/.idea/ratebeer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ratebeer.iws" />
@@ -31,7 +29,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="11" selection-start="303" selection-end="303" vertical-scroll-proportion="0.35958904" vertical-offset="45" max-vertical-offset="915">
+            <state line="20" column="0" selection-start="361" selection-end="361" vertical-scroll-proportion="0.43664384" vertical-offset="45" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
@@ -418,7 +416,11 @@
       <created>1421596529753</created>
       <updated>1421596529753</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated Gemfile for Heroku">
+      <created>1421604571947</created>
+      <updated>1421604571947</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -461,7 +463,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="viikko 1" />
     <MESSAGE value="viikko 1&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="viikko 1&#10;" />
+    <MESSAGE value="updated Gemfile for Heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated Gemfile for Heroku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -588,7 +591,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="303" selection-end="303" vertical-scroll-proportion="0.35958904" vertical-offset="45" max-vertical-offset="915">
+        <state line="20" column="0" selection-start="361" selection-end="361" vertical-scroll-proportion="0.43664384" vertical-offset="45" max-vertical-offset="915">
           <folding />
         </state>
       </provider>
