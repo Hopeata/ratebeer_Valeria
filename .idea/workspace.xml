@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="066a10cf-e0fb-46d6-ad44-c163029c2e26" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ratebeer.iws" />
@@ -75,7 +74,7 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="12" selection-start="756" selection-end="756" vertical-scroll-proportion="0.6270718" vertical-offset="73" max-vertical-offset="435">
+            <state line="14" column="6" selection-start="475" selection-end="475" vertical-scroll-proportion="0.4198895" vertical-offset="58" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -511,7 +510,11 @@
       <created>1422700193359</created>
       <updated>1422700193359</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Week three: Exercise 2.&#10;">
+      <created>1422702584940</created>
+      <updated>1422702584940</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -552,7 +555,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Week three: Exercise 1&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Week three: Exercise 1&#10;" />
+    <MESSAGE value="Week three: Exercise 2.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Week three: Exercise 2.&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -616,7 +620,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="12" selection-start="756" selection-end="756" vertical-scroll-proportion="0.6270718" vertical-offset="73" max-vertical-offset="435">
+        <state line="14" column="6" selection-start="475" selection-end="475" vertical-scroll-proportion="0.4198895" vertical-offset="58" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
