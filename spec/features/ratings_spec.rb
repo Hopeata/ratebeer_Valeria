@@ -3,8 +3,9 @@ require 'rails_helper'
 
 describe "Rating" do
   let!(:brewery) { FactoryGirl.create :brewery, name:"Koff" }
+  let!(:brewery2) {FactoryGirl.create :brewery, name:"Stadin panimo"}
   let!(:beer1) { FactoryGirl.create :beer, name:"iso 3", brewery:brewery }
-  let!(:beer2) { FactoryGirl.create :beer, name:"Karhu", brewery:brewery }
+  let!(:beer2) { FactoryGirl.create :beer, name:"Karhu", brewery:brewery2, style:"Weizen" }
   let!(:user) { FactoryGirl.create :user }
   let!(:user2) {FactoryGirl.create :user, username:"Pirjo", password:"Secret1", password_confirmation:"Secret1"}
 
@@ -32,6 +33,22 @@ describe "Rating" do
   r3 = FactoryGirl.create(:rating3, beer:beer1, user:user)
     visit ratings_path
     expect(page).to have_content 'Number of ratings: 3'
+  end
+
+  it "shows favorite beer style" do
+    r = FactoryGirl.create(:rating, beer:beer1, user:user)
+    r2 = FactoryGirl.create(:rating2, beer:beer1, user:user)
+    r3 = FactoryGirl.create(:rating3, beer:beer2, user:user)
+    visit user_path(user)
+    expect(page).to have_content 'Favorite beer style: Lager'
+  end
+
+  it "shows favorite brewery" do
+    r = FactoryGirl.create(:rating, beer:beer1, user:user)
+    r2 = FactoryGirl.create(:rating2, beer:beer1, user:user)
+    r3 = FactoryGirl.create(:rating3, beer:beer2, user:user)
+    visit user_path(user)
+    expect(page).to have_content 'Favorite brewery: Koff'
   end
 
   it "shows user's own ratings" do

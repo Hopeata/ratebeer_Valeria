@@ -15,4 +15,16 @@ class User < ActiveRecord::Base
     ratings.order(score: :desc).limit(1).first.beer
   end
 
+  def favorite_beer_style
+    return nil if ratings.empty?
+    styles = beers.group(:style).count
+    styles.max_by{|k,v| v}.first
+  end
+
+  def favorite_brewery
+    return nil if ratings.empty?
+    breweries = beers.group(:brewery).count
+    breweries.max_by{|k,v| v}.first
+  end
+
 end
