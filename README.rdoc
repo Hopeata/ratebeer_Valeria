@@ -1,8 +1,6 @@
 == README
 
-Heroku url: https://damp-chamber-3287.herokuapp.com/ ,
-joka ei kuitenkaan toimi, sillä vaihdoin nimeksi goodbeer.herokuapp.com/ , mutta push tapahtuu kuitenkin tuohon 
-damb-chamber-osoitteeseen, jota ei enää ole olemassa. En ole vielä osannut korjata asiaa.
+Heroku url: goodbeer.herokuapp.com
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
