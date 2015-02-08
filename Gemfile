@@ -10,12 +10,20 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
 
-#group :development, :test do
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
 #  gem 'byebug'
 #  gem 'web-console', '~> 2.0'
 #end

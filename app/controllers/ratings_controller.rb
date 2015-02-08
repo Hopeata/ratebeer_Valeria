@@ -17,7 +17,9 @@ class RatingsController < ApplicationController
     @rating = Rating.new params.require(:rating).permit(:score, :beer_id)
 
   #  session[:last_rating] = "#{rating.beer.name} #{rating.score} points"
-    if @rating.save
+    if current_user.nil?
+        redirect_to signing_path, notice: 'you should be signed in'
+    elsif @rating.save
       current_user.ratings << @rating
       redirect_to user_path current_user
     else
@@ -28,7 +30,7 @@ class RatingsController < ApplicationController
 
   def destroy
     rating = Rating.find(params[:id])
-    rating.delete
+    rating.delete if current_user == rating.user
     redirect_to :back
   end
 end
