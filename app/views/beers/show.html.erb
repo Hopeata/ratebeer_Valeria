@@ -7,11 +7,11 @@
 
 <p>
   <strong>Style:</strong>
-  <%= @beer.style %>
+  <%= @beer.style.name %>
 </p>
 
 <p>
-  <strong>Brewery id:</strong>
+  <strong>Brewery:</strong>
   <%= @beer.brewery.name %>
 </p>
 
@@ -23,7 +23,20 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_beer_path(@beer) %> |
+<% if current_user %>
+
+    <h4>give a rating:</h4>
+
+    <%= form_for Rating.new do |f| %>
+        <%= f.hidden_field :beer_id %>
+        score: <%= f.number_field :score %>
+        <%= f.submit %>
+    <% end %>
+
+    <%= link_to 'Edit', edit_beer_path(@beer) %>
+
+<% end %>
+
 <%= link_to 'Back', beers_path %>
 
 

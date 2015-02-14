@@ -6,6 +6,7 @@ class CreateBeers < ActiveRecord::Migration
       t.integer :brewery_id
 
       t.timestamps
+
     end
   end
 end
