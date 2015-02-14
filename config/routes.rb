@@ -13,6 +13,10 @@ Ratebeer::Application.routes.draw do
 
   delete 'signout', to: 'sessions#destroy'
 
+  get 'places', to:'places#index'
+
+  post 'places', to: 'places#search'
+
 #  get 'kaikki_bisset', to: 'beers#index'
 
 #  get 'ratings', to: 'ratings#index'

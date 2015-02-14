@@ -29,6 +29,8 @@ end
 #  gem 'web-console', '~> 2.0'
 #end
 
+gem 'httparty'
+
 #ruby '2.3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
