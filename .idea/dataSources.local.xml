@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails ratebeer: development" uuid="9fb3df66-b14c-4ab3-93db-fbcb6b3271eb">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+    <data-source name="Rails ratebeer: test" uuid="623dab31-4826-4f53-86cb-b97e51823cf4">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+  </component>
+</project>

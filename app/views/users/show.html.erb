@@ -7,7 +7,7 @@
   <% if @user.ratings.empty? %>
       has not rated any beers yet!
   <% else %>
-      <%= @user.average_rating %> <br>
+      Has made <%= pluralize(@user.ratings.count, 'rating') %>, average: <%= @user.average_rating %> <br>
       Favorite beer style: <%= @user.favorite_beer_style %> <br>
       Favorite brewery: <%= @user.favorite_brewery.name %>
   <% end %>

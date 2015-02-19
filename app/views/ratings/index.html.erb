@@ -5,4 +5,6 @@
   <% @ratings.each do |rating| %>
     <li> <%= rating %> <%= link_to rating.user.username, rating.user %> </li>
   <% end %>
+
+  <%= render 'recent', :recent_ratings => Rating.recent %>
 </ul>
