@@ -29,4 +29,9 @@ class User < ActiveRecord::Base
     breweries.max_by{|k,v| v}.first
   end
 
+  def self.top_activity(n)
+    User.all.sort_by{ |u| -(u.ratings.count) }.first(n)
+  end
+
+
 end

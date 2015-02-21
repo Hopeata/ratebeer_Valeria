@@ -12,7 +12,7 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place = BeermappingAPI.fetch_place(params[:id])
+    @place = BeermappingApi.fetch_place(params[:id])
   end
 
 end

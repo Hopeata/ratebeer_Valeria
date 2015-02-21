@@ -1,10 +1,24 @@
-<h2>List of ratings</h2>
+<h2>Ratings</h2>
 <p>Number of ratings: <%= @ratings.count %> </p>
-<p><%= link_to 'Add new rating', new_rating_path %> </p>
-<ul>
-  <% @ratings.each do |rating| %>
-    <li> <%= rating %> <%= link_to rating.user.username, rating.user %> </li>
-  <% end %>
+<p><%= link_to 'Add new rating', new_rating_path, class:"btn btn-success" %> </p>
 
+
+  <ul>
+    <div class="col-sm-9">
+<div class="row">
+  <div class="col-xs-6 col-sm4">
+  <%= render 'top', name: "breweries", :top => Brewery.top(3) %>
+  </div>
+  <div class="col-xs-6 col-sm4">
+  <%= render 'top', name: "beers", :top => Beer.top(3) %>
+    </div>
+    <div class="col-xs-6 col-sm4">
+  <%= render 'top', name: 'styles', :top => Style.top(3) %>
+      </div>
+</div>
+
+  <%= render 'active', name: "users", :active => User.top_activity(3) %>
   <%= render 'recent', :recent_ratings => Rating.recent %>
+    </div>
 </ul>
+

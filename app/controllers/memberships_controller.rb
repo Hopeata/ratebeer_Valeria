@@ -52,7 +52,7 @@ class MembershipsController < ApplicationController
     @membership = Membership.find(params[:id])
     @membership.destroy
     respond_to do |format|
-      format.html { redirect_to current_user, notice: 'Membership in #{@membership.beer_club.name} ended.' }
+      format.html { redirect_to current_user, notice: "Membership in #{@membership.beer_club.name} ended." }
       format.json { head :no_content }
     end
   end

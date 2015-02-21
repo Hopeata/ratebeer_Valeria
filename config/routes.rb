@@ -35,6 +35,14 @@ Ratebeer::Application.routes.draw do
   resources :ratings, only: [:index, :new, :create, :destroy]
 
   resources :places, only:[:index, :show]
+
+  resources :users do
+    post 'toggle_coldness', on: :member
+  end
+
+  resources :breweries do
+    post 'toggle_activity', on: :member
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -4,6 +4,16 @@
   <thead>
   <tr>
     <th></th>
+    <th>average</th>
   </tr>
   </thead>
+
+  <tbody>
+  <% top.each do |t| %>
+  <tr>
+        <td> <%= link_to t.name, t%></td>
+        <td> <%= round(t.average_rating) %></td>
+  </tr>
+  <% end %>
+  </tbody>
 </table>

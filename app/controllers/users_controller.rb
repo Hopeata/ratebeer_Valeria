@@ -37,6 +37,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def toggle_coldness
+    user = User.find(params[:id])
+    user.update_attribute :cold, (not user.cold)
+
+    new_status = user.cold? ? "frozen" : "unfrozen"
+
+    redirect_to :back, notice:"user status changed to #{new_status}"
+  end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

@@ -11,11 +11,15 @@ class Brewery < ActiveRecord::Base
   has_many :ratings, through: :beers
 
   def self.top(n)
-    breweries = []
+
+    breweries_with_average_rating = []
     Brewery.all.each do |b|
-      breweries.push(b)
+      if b.average_rating > 0
+        breweries_with_average_rating.push(b)
+      end
     end
-    sorted_by_rating_in_desc_order = Brewery.all.sort_by{ |b| (b.average_rating||0) }.first(3)
+
+    sorted_by_rating_in_desc_order = breweries_with_average_rating.sort_by{ |b| -(b.average_rating) }.first(n)
   end
 
   def print_report
