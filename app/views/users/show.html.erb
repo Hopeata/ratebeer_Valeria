@@ -2,8 +2,9 @@
 
 
 <h1> <%= @user.username %> </h1>
+<% if @user.cold %>
 <td><button type="button " class="btn btn-danger btn-xs" disabled="disabled">account frozen</button></td>
-
+<% end %>
 
 <p>
   <% if @user.ratings.empty? %>
@@ -27,6 +28,7 @@
       </li>
   <% end %>
 </ul>
+<% unless current_user.nil? %>
 <% if current_user.admin %>
     <% if @user.cold %>
         <%= link_to "Unfreeze account", toggle_coldness_user_path(@user.id), method: :post, class: "btn btn-primary" %>
@@ -37,4 +39,5 @@
 <% if @user == current_user %>
     <%= link_to 'Change password', edit_user_path(@user) %> |
     <%= link_to 'Delete account', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 <% end %>

@@ -4,9 +4,24 @@ class BreweriesController < ApplicationController
   # GET /breweries
   # GET /breweries.json
   def index
+      @breweries = Brewery.all
       @active_breweries = Brewery.active
       @retired_breweries = Brewery.retired
- #   render :panimot
+
+    order = params[:order] || 'name'
+
+    @breweries = case order
+                          when 'name' && session[:last_order].nil? then @breweries.sort_by{|b| b.name}
+                            session[:last_order] = order
+                            when 'year' && session[:last_order].nil? then @breweries.sort_by{|b| b.year}
+                            session[:last_order] = order
+                          when 'name' then @breweries.reverse!
+                          session[:last_order] = nil
+                          when 'year' then @breweries.reverse!
+                          session[:last_order] = nil
+                        end
+
+#    render :panimot
   end
 
   # GET /breweries/1

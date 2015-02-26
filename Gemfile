@@ -16,6 +16,7 @@ group :test do
   gem 'launchy'
   gem 'simplecov', require: false
   gem 'webmock'
+  gem 'selenium-webdriver'
 end
 
 gem 'bootstrap-sass'
@@ -38,6 +39,8 @@ end
 #end
 
 gem 'httparty'
+
+gem 'jquery-turbolinks'
 
 #ruby '2.3.0'
 # Use SCSS for stylesheets
