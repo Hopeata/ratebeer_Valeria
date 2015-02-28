@@ -20,6 +20,10 @@ Ratebeer::Application.routes.draw do
 
   get 'beerlist', to:'beers#list'
 
+  get 'ngbeerlist', to: 'beers#nglist'
+
+  get 'brewerylist', to: 'breweries#list'
+
   delete 'signout', to: 'sessions#destroy'
 
   post 'places', to: 'places#search'

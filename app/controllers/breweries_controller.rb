@@ -24,6 +24,8 @@ class BreweriesController < ApplicationController
 #    render :panimot
   end
 
+  def list
+  end
   # GET /breweries/1
   # GET /breweries/1.json
   def show
