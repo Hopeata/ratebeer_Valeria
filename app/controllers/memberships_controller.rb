@@ -17,11 +17,17 @@ class MembershipsController < ApplicationController
 # GET /memberships/1/edit
   def edit
   end
+
+  def toggle_confirmation
+    @membership = Membership.find(params[:id])
+    @membership.update_attribute :confirmed, (not @membership.confirmed)
+    redirect_to :back, notice:"Membership confirmed"
+  end
 # POST /memberships
 # POST /memberships.json
   def create
     @membership = Membership.new params.require(:membership).permit(:beer_club_id, :user_id)
-#    @membership.user = current_user
+    @membership.user = current_user
     respond_to do |format|
       if @membership.save
         format.html { redirect_to beer_club_path(@membership.beer_club_id), notice: "#{current_user.username}, welcome to the club!" }

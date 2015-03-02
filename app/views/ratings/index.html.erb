@@ -7,18 +7,18 @@
     <div class="col-sm-9">
 <div class="row">
   <div class="col-xs-6 col-sm4">
-  <%= render 'top', name: "breweries", :top => Brewery.top(3) %>
+  <%= render 'top', name: "breweries", :top => @topBreweries %>
   </div>
   <div class="col-xs-6 col-sm4">
-  <%= render 'top', name: "beers", :top => Beer.top(3) %>
+  <%= render 'top', name: "beers", :top => @topBeers %>
     </div>
     <div class="col-xs-6 col-sm4">
-  <%= render 'top', name: 'styles', :top => Style.top(3) %>
+  <%= render 'top', name: 'styles', :top => @topStyles %>
       </div>
 </div>
 
-  <%= render 'active', name: "users", :active => User.top_activity(3) %>
-  <%= render 'recent', :recent_ratings => Rating.recent %>
+  <%= render 'active', name: "users", :active => @topUsers %>
+  <%= render 'recent', :recent_ratings => @recentRatings %>
     </div>
 </ul>
 

@@ -33,5 +33,4 @@ class User < ActiveRecord::Base
     User.all.sort_by{ |u| -(u.ratings.count) }.first(n)
   end
 
-
 end

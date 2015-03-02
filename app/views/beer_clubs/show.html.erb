@@ -1,30 +1,43 @@
 <p id="notice"><%= notice %></p>
-<h2>
-  <%= "#{@beer_club.name} #{@beer_club.city}"%>
-</h2>
+<h2> <%= "#{@beer_club.name} #{@beer_club.city}"%> </h2>
 <p>
   Founded in <%= @beer_club.founded %>
 </p>
-<ul>
-  <% @beer_club.members.each do |member| %>
-      <li>
-        <%= link_to member.username, member %>
-      </li>
+
+<p>Members:</p>
+<td>
+  <% @beer_club.confirmed_memberships.each do |m| %>
+        <ul> <%= link_to m.user.username, m.user %> </ul>
   <% end %>
-</ul>
+</td>
 <% if current_user %>
-    <% if @beer_club.members.include? current_user %>
+    <% if current_user.memberships.find_by(beer_club_id: @beer_club.id) %>
+        <% if @beer_club.unconfirmed_memberships.size > 0 && current_user.memberships.find_by(beer_club_id: @beer_club.id).confirmed %>
+            <p>Applicants</p>
+            <% @beer_club.unconfirmed_memberships.each do |um| %>
+                <table class="table table-hover">
+                <thead>
+                <tr>
+                  <td><%= um.user.username %></td>
+                  <td><%= link_to "confirm", toggle_confirmation_membership_path(um.id), method: :post, class: "btn btn-success" %></td>
+                </tr>
+                </thead>
+                </table>
+            <% end %>
+        <% end %>
+
         <%= form_for(@membership, method: "delete") do |f| %>
             <%= f.hidden_field :beer_club_id %>
             <%= f.submit value: "end the membership" %>
         <% end %>
+
     <% else %>
         <%= form_for(@membership) do |f| %>
-            <%= f.hidden_field :user_id %>
         <%= f.hidden_field :beer_club_id %>
         <%= f.submit value:"join the club" %>
         <% end %>
     <% end %>
+
 <% end %>
 
 <%= link_to 'Edit', edit_beer_club_path(@beer_club), class: "btn" %>

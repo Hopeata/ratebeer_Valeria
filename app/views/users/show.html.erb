@@ -16,6 +16,25 @@
   <% end %>
 </p>
 
+<h2>Beer clubs</h2>
+
+<h4>confirmed member of</h4>
+<ul>
+  <% @user.memberships.each do |m| %>
+      <% if m.confirmed %>
+    <li><%= link_to "#{m.beer_club.name}" %></li>
+      <% end %>
+  <% end %>
+</ul>
+<h4>applied to membership of</h4>
+<ul>
+  <% @user.memberships.each do |m| %>
+      <% unless m.confirmed %>
+          <li><%= link_to "#{m.beer_club.name}" %></li>
+      <% end %>
+  <% end %>
+</ul>
+
 <h2>ratings</h2>
 
 <ul>

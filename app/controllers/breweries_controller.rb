@@ -1,8 +1,14 @@
 class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
   before_action :ensure_that_signed_in, :except => [:index, :show]
+  before_action :skip_if_cached, only:[:index]
   # GET /breweries
   # GET /breweries.json
+  def skip_if_cached
+    @order = params[:order] || 'name'
+    return render :index if fragment_exist?( "brewerylist"  )
+  end
+
   def index
       @breweries = Brewery.all
       @active_breweries = Brewery.active
@@ -44,7 +50,7 @@ class BreweriesController < ApplicationController
   # POST /breweries.json
   def create
     @brewery = Brewery.new(brewery_params)
-
+    expire_fragment :action => :index
     respond_to do |format|
       if @brewery.save
         format.html { redirect_to @brewery, notice: 'Brewery was successfully created.' }
@@ -59,6 +65,7 @@ class BreweriesController < ApplicationController
   # PATCH/PUT /breweries/1
   # PATCH/PUT /breweries/1.json
   def update
+    ["brewerylist-name", "brewerylist-year"].each{ |f| expire_fragment(f) }
     respond_to do |format|
       if @brewery.update(brewery_params)
         format.html { redirect_to @brewery, notice: 'Brewery was successfully updated.' }
@@ -74,6 +81,7 @@ class BreweriesController < ApplicationController
   # DELETE /breweries/1.json
   def destroy
     @brewery.destroy
+    ["brewerylist-name", "brewerylist-year"].each{ |f| expire_fragment(f) }
     respond_to do |format|
       format.html { redirect_to breweries_url }
       format.json { head :no_content }

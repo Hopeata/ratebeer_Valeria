@@ -4,16 +4,19 @@ class BeersController < ApplicationController
 
   # GET /beers
   # GET /beers.json
+  def skip_if_cached
+    @order = params[:order] || 'name'
+    return render :index if fragment_exist?( "beerlist-#{@order}"  )
+  end
+
   def index
     @beers = Beer.includes(:brewery, :style).all
 
-    order = params[:order] || 'name'
-
-    @beers = case order
-               when 'name' then @beers.sort_by{ |b| b.name }
-               when 'brewery' then @beers.sort_by{ |b| b.brewery.name }
-               when 'style' then @beers.sort_by{ |b| b.style.name }
-             end
+    case @order
+      when 'name' then @beers.sort_by!{ |b| b.name }
+      when 'brewery' then @beers.sort_by!{ |b| b.brewery.name }
+      when 'style' then @beers.sort_by!{ |b| b.style.name }
+    end
   end
 
   # GET /beers/1
@@ -43,6 +46,8 @@ class BeersController < ApplicationController
   # POST /beers
   # POST /beers.json
   def create
+    expire_fragment('beerlist')
+    ["beerlist-name", "beerlist-brewery", "beerlist-style"].each{ |f| expire_fragment(f) }
     @beer = Beer.new(beer_params)
 
     if @beer.save
@@ -68,6 +73,8 @@ class BeersController < ApplicationController
   # PATCH/PUT /beers/1
   # PATCH/PUT /beers/1.json
   def update
+    expire_fragment('beerlist')
+    ["beerlist-name", "beerlist-brewery", "beerlist-style"].each{ |f| expire_fragment(f) }
     respond_to do |format|
       if @beer.update(beer_params)
         format.html { redirect_to @beer, notice: 'Beer was successfully updated.' }
@@ -82,6 +89,8 @@ class BeersController < ApplicationController
   # DELETE /beers/1
   # DELETE /beers/1.json
   def destroy
+    expire_fragment('beerlist')
+    ["beerlist-name", "beerlist-brewery", "beerlist-style"].each{ |f| expire_fragment(f) }
     @beer.destroy
     respond_to do |format|
       format.html { redirect_to beers_url }
